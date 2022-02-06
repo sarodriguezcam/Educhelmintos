@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Personas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+    var pagina = 1;
+
+    function siguiente()
+    {
+    pagina=pagina+1;
+    changetext();
+    }
+
+    function anterior()
+    {
+    pagina=pagina-1;
+    changetext();
+    }
+
+    function changetext()
+    {
+    var img = document.getElementById("image");
+    var ant = document.getElementById("ant");
+    var sig = document.getElementById("sig");
+
+    if (pagina==1){
+    document.getElementById("titulo").innerHTML="¿Qué son las geohelmintiasis?";
+    document.getElementById("pag1").innerHTML="Las geohelmintiasis son un grupo de enfermedades causadas por parásitos que entran al cuerpo cuando comemos alimentos contaminados o a través de los pies descalzos. Existen múltiples tipos de geohelmintos pero los más comunes son <i> Ascaris lumbricoides, Trichuris trichura, Ancylostoma duodenale y Necator americanus.</i> Estos son muy pequeños y difíciles de ver, pero están ahí y debemos cuidarnos.";
+    img.src="/images/necator.jpg";
+    ant.classList.add('d-none');
+    return false;
+    }
+
+    if (pagina==2){
+    document.getElementById("titulo").innerHTML="Los helmintos están en el suelo";
+    document.getElementById("pag1").innerHTML="Como ya lo dijimos, los geohelmintos pueden entrar a nuestro cuerpo a través de nuestros pies descalzos. Es por esto que siempre debemos usar zapatos, en especial fuera de casa. Hay personas que tienen pisos de tierra en sus hogares, en donde es fácil que los helmintos se escondan, por lo que si esta es tu situación debes usar zapatos dentro de tu casa también. <br> <br> Además hay personas que hacen del cuerpo en la tierra o en el monte en lugar de los sitios destinados. Esto es malo porque pueden contaminar el suelo y las aguas cercanas, haciendo que otras personas se infecten.";
+    img.src="/images/caminar.svg";
+    ant.classList.remove('d-none');
+    return false;
+    }
+
+    if (pagina==3){
+    document.getElementById("titulo").innerHTML="Cuidado con la comida";
+    document.getElementById("pag1").innerHTML="Otra forma en la que los geohelmintos llegan a nuestro cuerpo es por nuestra boca, cuando comemos alimentos contaminados o tomamos agua que no está limpia. Las personas que no tienen agua potable, alcantarillado o acueducto tienen entonces más riesgo de contraer las geohelmintiasis.<br> Para evitar este contagio es importante que lavemos los alimentos con agua filtrada o hervida, en especial las frutas y verduras, para que queden libres de helmintos.<br><br>También recuerda lavarte las manos con agua y jabón regularmente, en especial antes de comer y después de ir al baño, para así prevenir varias enfermedades";
+    img.src="/images/sandia.svg";
+    }
+
+    if (pagina==4){
+    document.getElementById("titulo").innerHTML="Lávate los dientes";
+    document.getElementById("pag1").innerHTML="Además de lavarte las manos varias veces al día, es importante que te laves los dientes tres veces al día, en especial después de comer. Pasa el cepillo 10 veces diente por diente, por delante y por detrás. Usar enjuague bucal y ceda de dientes es el toque final. <br><br>Mantener tus dientes limpios es siempre bueno y ayuda a que tengas buena salud. Por supuesto también hace para los geohelmintos más difícil enfermarte.";
+    img.src="/images/dientes.svg";
+    }
+
+    if (pagina==5){
+    document.getElementById("titulo").innerHTML="¿Y qué me hacen los geohelmintos?";
+    document.getElementById("pag1").innerHTML="Por lo general todos los geohelmintos causan diarrea, dolor de barriga, pérdida de apetito, cansancio, debilidad y malestar general. Algunos helmintos incluso pueden causar anemia.<br><br> Más importante aún, las geohelmintiasis pueden traer problemas a largo plazo si no se tratan: bajo crecimiento, baja productividad y rendimiento en la escuela y en el trabajo o incluso déficits cognitivos. ¡Es por eso que debemos evitarlas y tratarlas siempre!";
+    img.src="/images/dolorbarriga.svg";
+    }
+
+    if (pagina==6){
+    document.getElementById("titulo").innerHTML="Mitos sobre las geohelmintiasis";
+    document.getElementById("pag1").innerHTML="Hay algunos mitos sobre las geohelmintiasis que no son ciertos. Algunas personas creen que comer dulces o azucar causa geohelmintiasis, pero aunque comer bien ayuda a estar sano, no hay comidas específicas que transmitan geohelmintiasis. También dicen que solo les da a niños, pero aunque sea más común y complicado en menores, los adultos también se pueden contagiar y sobretodo ayudar a transmitirlas a otros. Unos pocos creen que una vez curado no puedes volver a tener geohelmintos, pero no es verdad. Si no te sigues cuidando, fácilmente puedes volver a contraerlos.";
+    img.src="/images/mujerduda.svg";
+    sig.classList.remove('d-none');
+    }
+
+    if (pagina==7){
+    document.getElementById("titulo").innerHTML="¿Y cómo me curo?";
+    document.getElementById("pag1").innerHTML="Recuerda que el tratamiento médico debe ser recetado y seguido por profesionales de la salud. Casi siempre el tratamiento para este tipo de enfermedades es desparacitantes o también conocidos como purgantes, en especial <i>Albendazol</i>, una pastilla que debes tomar una sola vez. <br><br> Pero recuerda que si no te cuidas y no sigues las recomendaciones, rápidamente puedes volver a enfermarte. ¡No bajes la guardia!";
+    img.src="/images/enfermera.svg";
+    sig.classList.add('d-none');
+    }
+    }
+    </script>
+</head>
+<body style="background-color:#D0AFFF;">
+<div class="container  vh-100 d-flex align-items-center">
+    <div class="row h-75 d-flex align-items-center border border-dark " style="background-color:#DEF5EE;">
+        <div class="container col-6 " >
+            <br>
+            <br>
+            <h3 id="titulo">¿Qué son las geohelmintiasis?</h3>
+            <br>
+            <br>
+            <p  id="pag1">Las geohelmintiasis son un grupo de enfermedades causadas por parásitos que entran al cuerpo cuando comemos alimentos contaminados o a través de los pies descalzos.
+                Existen múltiples tipos de geohelmintos pero los más comunes son <i> Ascaris
+                    lumbricoides, Trichuris trichura, Ancylostoma duodenale y
+                    Necator americanus.</i> Estos son muy pequeños y difíciles de ver, pero están ahí y debemos cuidarnos.</p>
+
+
+        </div>
+        <div class="container col-6 " >
+            <div class="d-flex justify-content-center">
+                <img id="image" th:src="@{/images/necator.jpg}" alt="img1" width="300" height="360">
+            </div>
+
+        </div>
+        <div class="container d-flex justify-content-center">
+
+            <div class="col-4" id="ant2">
+
+                <button  id="ant" class="btn btn-primary mt-3 d-none" onclick="anterior();" >Anterior</button>
+            </div>
+            <button id="sig" class="btn btn-primary mt-3 " onclick="siguiente();">Siguiente</button>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <a th:href="@{/private/index/menueducacion/{claveid}(claveid=${session.usuario.id})}" class="btn btn-dark mt-3">Terminar</a>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

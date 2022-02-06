@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuestionario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        var puntaje = 16;
+
+
+        function terminar()
+        {
+        if (document.getElementById("azucarF").checked==false){
+            puntaje--;
+            document.getElementById("azucarx").classList.remove('d-none');
+        }
+        if (document.getElementById("deposF").checked==false){
+            puntaje--;
+            document.getElementById("deposx").classList.remove('d-none');
+
+
+        }
+        if (document.getElementById("diarrea").checked==false){
+            puntaje--;
+            document.getElementById("diarreax").classList.remove('d-none');
+
+        }
+        if (document.getElementById("vomito").checked==true){
+            puntaje--;
+            document.getElementById("vomitox").classList.remove('d-none');
+        }
+        if (document.getElementById("debilidad").checked==false){
+            puntaje--;
+            document.getElementById("debilidadx").classList.remove('d-none');
+        }
+        if (document.getElementById("fiebre").checked==true){
+            puntaje--;
+            document.getElementById("fiebrex").classList.remove('d-none');
+        }
+        if (document.getElementById("escalofrios").checked==true){
+            puntaje--;
+            document.getElementById("escalofriosx").classList.remove('d-none');
+        }
+        if (document.getElementById("anemia").checked==false){
+            puntaje--;
+            document.getElementById("anemiax").classList.remove('d-none');
+        }
+        if (document.getElementById("apetito").checked==false){
+            puntaje--;
+            document.getElementById("apetitox").classList.remove('d-none');
+        }
+        if (document.getElementById("contagioF").checked==false){
+            puntaje--;
+            document.getElementById("contagiox").classList.remove('d-none');
+        }
+        if (document.getElementById("crecimientoV").checked==false){
+            puntaje--;
+            document.getElementById("crecimientox").classList.remove('d-none');
+        }
+        if (document.getElementById("descalzo").checked==false){
+            puntaje--;
+            document.getElementById("descalzox").classList.remove('d-none');
+        }
+        if (document.getElementById("defecar").checked==false){
+            puntaje--;
+            document.getElementById("defecarx").classList.remove('d-none');
+        }
+        if (document.getElementById("fumar").checked==true){
+            puntaje--;
+            document.getElementById("fumarx").classList.remove('d-none');
+        }
+        if (document.getElementById("dientes").checked==false){
+            puntaje--;
+            document.getElementById("dientesx").classList.remove('d-none');
+        }
+        if (document.getElementById("tratamientoF").checked==false){
+            puntaje--;
+            document.getElementById("tratamientox").classList.remove('d-none');
+        }
+        document.getElementById("terminar").classList.add('d-none');
+        document.getElementById("puntaje").classList.remove('d-none');
+        var prueba ="Tu puntaje es: <br>"+puntaje+"/16";
+        document.getElementById("puntaje").innerHTML=prueba;
+        }
+
+    </script>
+</head>
+<body style="background-color:#BADA5E">
+<div class="container mt-5 col-6 border border-dark mb-3" style="background-color:#FFFF;">
+    <form ><!-- action="#" th:action="@{/private/index/cuestionario/resultados}" name="cuestionario" th:object="${diagnostico}" method="POST"-->
+        <h1 id="ss"><center>¿Qué tanto sabes de las geohelmintiasis?</center></h1>
+        <br>
+        <h6><center>Responde las siguientes preguntas una a una según las instrucciones. En total puedes obtener 16 puntos y cada error te resta un punto. ¡Intenta conseguir todos los puntos!</center></h6>
+
+        <br>
+        <br>
+        <h6><b>1. Responda verdadero o falso:</b> Comer mucho azúcar puede causar geohelmintiasis:<small> <i>(1 punto)</i></small></h6>
+        <input type="radio" name="azucar" id="azucarV" value="V">Verdadero <div class="d-none" id="azucarx" style="color:red;"><b>X</b> No hay evidencia que comer azúcar esté relacionado con las geohelmintiasis</div><br>
+        <input type="radio" name="azucar" id="azucarF" value="F">Falso<br>
+        <br>
+        <h6><b>2. Responda verdadero o falso:</b> Si no se ven gusanos en la deposición, probablemente no estés infectado:<small> <i>(1 punto)</i></small></h6>
+        <input type="radio" name="depos" value="V">Verdadero<br><div class="d-none" id="deposx" style="color:red;"><b>X</b> Los helmintos y sus huevos son muy pequeños y muy difíciles de ver, pero aún pueden estar ahí</div>
+        <input type="radio" name="depos" id="deposF" value="F">Falso<br>
+        <br>
+        <h6><b>3. Seleccione todos los que crea verdaderos según la frase:</b> Los siguientes son síntomas comunes causados por las geohelmintiasis:<small> <i>(7 puntos)</i></small></h6>
+        <input type="checkbox" id="diarrea" value="diarrea">diarrea<div class="d-none" id="diarreax" style="color:red;"><b>X</b> La diarrea es una de los principales síntomas</div><br>
+        <input type="checkbox" id="vomito" value="vomito">vómito<div class="d-none" id="vomitox" style="color:red;"><b>X</b> El vómito no suele ser un síntoma común</div><br>
+        <input type="checkbox" id="debilidad" value="debilidad">debilidad<div class="d-none" id="debilidadx" style="color:red;"><b>X</b> La debilidad es un síntoma común de las helmintiasis</div><br>
+        <input type="checkbox" id="fiebre" value="fiebre">fiebre<div class="d-none" id="fiebrex" style="color:red;"><b>X</b> Los helmintos no suelen causar fiebre</div><br>
+        <input type="checkbox" id="escalofrios" value="escalofrios">escalofríos<div class="d-none" id="escalofriosx" style="color:red;"><b>X</b> Los helmintos no suelen causar escalofríos</div><br>
+        <input type="checkbox" id="anemia" value="anemia">anemia<div class="d-none" id="anemiax" style="color:red;"><b>X</b> Algunos helmintos causan anemia y palidez</div><br>
+        <input type="checkbox" id="apetito" value="apetito">pérdida de apetito<div class="d-none" id="apetitox" style="color:red;"><b>X</b> Los helmintos suelen causar pérdida de apetito</div><br>
+        <br>
+        <h6><b>4. Responda verdadero o falso:</b> Una vez que te contagias con geohelmintiasis, no puedes volver a contagiarte:<small> <i>(1 punto)</i></small></h6>
+        <input type="radio" name="contagio" value="V">Verdadero<div class="d-none" id="contagiox" style="color:red;"><b>X</b> Si no te cuidas fácilmente te puedes contagiar una y otra vez</div><br>
+        <input type="radio" name="contagio" id="contagioF" value="F">Falso<br>
+        <br>
+        <h6><b>5. Responda verdadero o falso:</b> A largo plazo las helmintiasis pueden causar retraso de crecimiento:<small> <i>(1 punto)</i></small></h6>
+        <input type="radio" name="crecimiento" id="crecimientoV" value="V">Verdadero<br>
+        <input type="radio" name="crecimiento" value="F">Falso<div class="d-none" id="crecimientox" style="color:red;"><b>X</b>Las geohelmintiasis sí pueden causar retrasos del crecimiento y el aprendizaje</div><br>
+        <br>
+        <h6><b>6. Seleccione todos los que crea verdaderos según la frase:</b> Los siguientes son factores de riesgo para contraer geohelmintiasis:<small> <i>(4 puntos)</i></small></h6>
+        <input type="checkbox" id="descalzo" value="descalzo">caminar descalzo<div class="d-none" id="descalzox" style="color:red;"><b>X</b>Los geohelmintos entran al cuerpo por la piel, por lo que caminar descalzos les facilita infectarnos</div><br>
+        <input type="checkbox" id="defecar" value="defecar">defecar en el suelo<div class="d-none" id="defecarx" style="color:red;"><b>X</b>Hacer esto contamina el suelo y las aguas cercanas, facilitando que se esparzan</div><br>
+        <input type="checkbox" id="fumar" value="fumar">fumar<div class="d-none" id="fumarx" style="color:red;"><b>X</b>Fumar no es bueno para la salud, pero no está relacionado con los geohelmintos</div><br>
+        <input type="checkbox" id="dientes" value="dientes">no lavarse los dientes regularmente<div class="d-none" id="dientesx" style="color:red;"><b>X</b>Tener mala higiene dental favorece la entrada de parásitos de todo tipo</div><br>
+        <br>
+        <h6><b>7. Responda verdadero o falso:</b> El tratamiento de las helmintiasis depende del helminto específico:<small> <i>(1 punto)</i></small></h6>
+        <input type="radio" name="tratamiento" value="V">Verdadero<div class="d-none" id="tratamientox" style="color:red;"><b>X</b>El tratamiento típico para todos los tipos de geohelmintos es los desparasitantes</div><br>
+        <input type="radio" name="tratamiento" id="tratamientoF" value="F">Falso<br>
+        <br>
+
+    </form>
+    <center><button  id="terminar" class="btn btn-success mb-3" onclick="terminar();" >Terminar</button></center>
+    <center><font size="+2"><div class="d-none" id="puntaje"></div></font></center>
+    <center><a th:href="@{/private/index/educacion/{claveid}(claveid=${session.usuario.id})}" class="btn btn-success mb-3">Ver el material educativo</a></center>
+    <center><a th:href="@{/private/index}" class="btn btn-dark mb-3">salir</a></center>
+</div>
+</body>
+</html>

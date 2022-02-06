@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Personas</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#F6B437;">
+<div class="container" th:object="${diagnostico}" >
+  <div class="text-center mt-5">
+    <br>
+    <h1>Estás en alto riesgo de enfermarte con geohelmintiasis</h1>
+    <br>
+    <br>
+    <p class="lead font-weight-bold">A pesar de que no parece que en este momento tengas algún parásito, por tus hábitos y condiciones
+      <br>de vida estás en riesgo de contraerlos en el futuro. Por favor lee las recomendaciones para que puedas evitarlo
+
+    </p>
+  </div>
+  <img th:src="@{/images/helminto.svg}" alt="img1" width="300" height="360" align="right"/>
+  <br>
+  <div class="text-left">
+    <h3>Recomendaciones:</h3>
+
+    <td >
+      <ul>
+                 <span th:if="${diagnostico.pisos != null}" ><li>Recuerda que los geohelmintos se contagian por el suelo, por lo que los pisos
+                 <br>de tierra son fuentes de alto contagio, en especial si caminas descalzo.<br><br></li></span>
+
+        <span th:if="${diagnostico.acueducto != null}" ><li>Las geohelmintiasis se contagian también por consumir alimentos contaminados,
+                <br>por lo que si tu vivienda no cuenta con servicios de acueducto o alcantarillado
+                <br>tu higiene y limpieza de alimentos puede no ser suficiente para prevenirlas.
+                <br>A veces es buena idea purificar el agua hirviéndola por ejemplo.<br><br></li></span>
+
+        <span th:if="${diagnostico.zapatos != null}" ><li>Caminar sin zapatos es uno de los principales factores de riesgo para las
+                 <br>geohelmintiasis, pues estos están en el suelo y pueden entrar al cuerpo
+                 <br>por los pies descalzos. ¡No camines sin zapatos!<br><br></li></span>
+
+        <span th:if="${diagnostico.frutas != null}" ><li>Siempre lava las frutas, verduras y cualquier alimento que consumas sin
+                 <br>cocinar con agua limpia o hervida, así disminuirás las probabilidades de
+                 <br>contagiarte con geohelmintos.<br><br></li></span>
+
+        <span th:if="${diagnostico.dientes != null}" ><li>Lavarte los dientes dos o tres veces al día es bueno para tu salud, no solo
+                 <br>para evitar las geohelmintiasis sino también varias enfermedades orales.<br><br></li></span>
+
+        <span th:if="${diagnostico.defeca != null}" ><li>Hacer del cuerpo en el monte o en general en la tierra no es buena idea,
+                 <br>porque puede contaminar los suelos y hacer que tú o cualquier persona
+                <br>se enfermen fácilmente.<br><br></li></span>
+
+        <span th:if="${diagnostico.lavado != null}" ><li>Lavarse las manos regularmente es una de las mejores formas de evitar
+                 <br>muchos tipos de enfermedades. ¡A los geohelmintos tampoco les gusta el
+                <br>agua con jabón!<br><br></li></span>
+      </ul>
+    </td>
+  </div>
+  <br>
+  <br>
+  <div class="align-self-end text-center" >
+    <a th:href="@{/private/index}" class="btn btn-primary btn-sm mb-3 ">Volver</a>
+  </div>
+</div>
+
+</body>
+</html>

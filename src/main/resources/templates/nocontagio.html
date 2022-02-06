@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Personas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#ff99bb;">
+<div class="container" th:object="${diagnostico}">
+    <div class="text-center mt-5">
+        <br>
+        <h1>Es hora de ir al médico</h1>
+        <br>
+        <br>
+        <p class="lead font-weight-bold">No parece que estés infectado con geohelmintiasis.
+            <br>Sin embargo no te sientes del todo bien, por lo que es momento de
+            <br>visitar al doctor para que juntos puedan saber qué pasa.
+
+        </p>
+        <br>
+        <img class="pl-4" th:src="@{/images/hombredoctor.svg}" alt="img1" width="300" height="360" />
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <div class="align-self-end text-center" >
+        <a th:href="@{/private/index}" class="btn btn-primary btn-sm mb-3 ">Volver</a>
+    </div>
+</div>
+
+</body>
+</html>

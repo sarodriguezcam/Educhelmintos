@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Personas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#C5F6FF;">
+<div class="container">
+    <h1>Agregar persona</h1>
+    <hr>
+    <h2>Ingrese los datos de la persona</h2>
+    <form action="#" th:action="@{/private/index/listapersona/savepersona/{claveid}(claveid=${session.usuario.id})}" th:object="${persona}" method="POST">
+        <br>
+        <p>Nombre:</p>
+        <input type="text" th:field="*{nombre}" class="form-control mb-4 col-4">
+        <p>Apellido</p>
+        <input type="text" th:field="*{apellido}"  class="form-control mb-4 col-4">
+        <p>Edad</p>
+        <input type="Edad" th:field="*{edad}"  class="form-control mb-4 col-4">
+        <p>Sexo (M/F)</p>
+        <input type="text" th:field="*{sexo}"  class="form-control mb-4 col-4">
+        <p>¿Ha sido diagnosticado con helmintiasis?(Si/No)</p>
+        <input type="text" th:field="*{diagnostico}" class="form-control mb-4 col-4">
+        <p>¿Qué síntomas ha tenido?</p>
+        <input type="text" th:field="*{sintomas}" class="form-control mb-4 col-4">
+
+        <input type="hidden" name="iduser" id="iduser" th:value="${session.usuario.id}" class="form-control mb-4 col-4">
+
+
+
+        <button type="submit" class="btn btn-info col-2">Agregar persona</button>
+        <a th:href="@{/private/index/listapersona/{claveid}(claveid=${session.usuario.id})}" class="btn btn-dark">Cancelar</a>
+    </form>
+
+</div>
+</body>
+</html>

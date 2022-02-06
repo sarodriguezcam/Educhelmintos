@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Personas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#C5F6FF;">
+<div class="container my-2" >
+
+    <h1>Lista de Personas </h1>
+    <a th:href="@{/private/index/listapersona/nuevapersona}" class="btn btn-primary btn-sm mb-3">Agregar persona</a>
+    <a th:href="@{/private/index}" class="btn btn-dark btn-sm mb-3">Volver</a>
+    <table border="1" class="table table-striped table-responsive-md table-secondary border border-dark" >
+        <thead>
+        <tr >
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Sexo</th>
+            <th>Ha sido diagnosticado con geohelmintiasis?</th>
+            <th>Sintomas que presenta(diarrea, dolor, cansancio etc)</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="persona : ${listaPersona}">
+            <td th:text="${persona.nombre}"></td>
+            <td th:text="${persona.apellido}"></td>
+            <td th:text="${persona.edad}"></td>
+            <td th:text="${persona.sexo}"></td>
+            <td th:text="${persona.diagnostico}"></td>
+            <td th:text="${persona.sintomas}"></td>
+            <td><center> <a th:href="@{/private/index/listapersona/showupdatepersona/{id}(id=${persona.id})}" class="btn btn-primary">Actualizar</a>
+                <a th:href="@{/private/index/listapersona/borrarpersona/{id}/{iduser} (id=${persona.id},iduser=${session.usuario.id})}" class="btn btn-dark">Borrar</a></center>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
